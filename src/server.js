@@ -21,3 +21,4 @@ const server = http.createServer((req, res) => {
 })
 
 server.listen(3333)
+console.log("Servidor Rodando na Porta : 3333")
