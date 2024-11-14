@@ -1,7 +1,5 @@
 import fs from 'node:fs/promises'
-import { url } from 'node:inspector'
-
-const databasepath = new URL('db.json', import.meta.url)
+const databasepath = new URL('../db.json', import.meta.url)
 
 export class Database {
     #database = {}
@@ -30,6 +28,8 @@ export class Database {
         } else {
             this.#database[table] = [data]
         }
+        this.#persist();
+        return data
     }
 
 }
